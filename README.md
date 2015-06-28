@@ -50,7 +50,7 @@ cons[name]('views/page.html', { user: 'tobi' }, function(err, html){
   Additionally, all templates optionally return a promise if no callback function is provided. The promise represents the eventual result of the template function which will either resolve to a string, compiled from the template, or be rejected. Promises expose a `then` method which registers callbacks to receive the promise’s eventual value and a `catch` method which the reason why the promise could not be fulfilled. Promises allow more synchronous-like code structure and solve issues like race conditions.
 
 ```js
-var cons = require('consolidate');
+var cons = require('consolidate-jstransformer');
 
 cons.swig('views/page.html', { user: 'tobi' })
   .then(function (html) {
