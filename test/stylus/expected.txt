@@ -1,0 +1,4 @@
+body {
+  padding: 14px;
+  font-face: helvetica, arial, sans-serif;
+}

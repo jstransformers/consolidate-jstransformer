@@ -1,0 +1,6 @@
+fonts = helvetica, arial, sans-serif
+
+body {
+  padding: 1px*paddingSize;
+  font-face: fonts;
+}

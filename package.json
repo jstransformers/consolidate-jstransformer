@@ -1,0 +1,36 @@
+{
+  "name": "consolidate-jstransformer",
+  "version": "0.0.1",
+  "description": "Consolidate-compatible API to use JSTransformers.",
+  "keywords": [
+    "jstransformer",
+    "consolidate"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "devDependencies": {
+    "jstransformer-stylus": "^0.0.6",
+    "jstransformer-swig": "^0.1.2",
+    "standard": "^4.4.0",
+    "testit": "^2.0.2"
+  },
+  "scripts": {
+    "test": "standard; node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jstransformers/consolidate-jstransformer.git"
+  },
+  "author": {
+    "name": "JSTransformers Team",
+    "url": "http://github.com/orgs/jstransformers/people"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "extract-opts": "^3.0.1",
+    "jstransformer": "^0.0.2",
+    "list-of-jstransformers": "^0.0.2",
+    "promise": "^7.0.3"
+  }
+}
