@@ -11,9 +11,23 @@
 
     npm install consolidate-jstransformer
 
+## Usage
+
+#### Before
+
+``` javascript
+var cons = require('consolidate')
+```
+
+#### After
+
+``` javascript
+var cons = require('consolidate-jstransformer')
+```
+
 ## API
 
-All templates supported by this library may be rendered using the signature `(path[, locals], callback)` as shown below, which happens to be the signature that Express 3.x supports so any of these engines may be used within Express.
+Use `consolidate-jstransformer` the same way you would use Consolidate:
 
 ```js
 var cons = require('consolidate-jstransformer');
@@ -45,9 +59,21 @@ cons[name]('views/page.html', { user: 'tobi' }, function(err, html){
 });
 ```
 
+  Render strings rather than files:
+
+```js
+var cons = require('consolidate-jstransformer')
+  , name = 'swig';
+
+cons[name].render('Hello {{ user }}', { user: 'tobi' }, function(err, html){
+  if (err) throw err;
+  console.log(html);
+});
+```
+
 ### Promises
 
-  Additionally, all templates optionally return a promise if no callback function is provided. The promise represents the eventual result of the template function which will either resolve to a string, compiled from the template, or be rejected. Promises expose a `then` method which registers callbacks to receive the promise’s eventual value and a `catch` method which the reason why the promise could not be fulfilled. Promises allow more synchronous-like code structure and solve issues like race conditions.
+If no callback function is provided, a Promise will be returned.
 
 ```js
 var cons = require('consolidate-jstransformer');

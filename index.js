@@ -17,15 +17,18 @@ transformers.forEach(function (name) {
     var locals = options.locals ? options.locals : options
 
     if (fn) {
-      var result = transformer.renderFile(filename, options, locals)
-      return fn(null, result.body)
+      return transformer.renderFileAsync(filename, options, locals, function (err, result) {
+        fn(err, result.body ? result.body : null)
+      })
     }
     return new Promise(function (fulfill, reject) {
-      var result = transformer.renderFile(filename, options, locals)
-      if (result && result.body) {
-        return fulfill(result.body)
-      }
-      return reject('Error compiling template')
+      transformer.renderFileAsync(filename, options, locals, function (err, result) {
+        if (err) {
+          reject(err)
+        } else {
+          fulfill(result.body)
+        }
+      })
     })
   }
 
@@ -42,16 +45,18 @@ transformers.forEach(function (name) {
     var locals = options.locals ? options.locals : options
 
     if (fn) {
-      var result = transformer.render(str, options, locals)
-      return fn(null, result.body)
+      return transformer.renderAsync(str, options, locals, function (err, result) {
+        fn(err, result.body ? result.body : null)
+      })
     }
     return new Promise(function (fulfill, reject) {
-      var result = transformer.render(str, options, locals)
-      if (result) {
-        return fulfill(result.body)
-      }
-      reject('Error compiling template')
+      transformer.renderAsync(str, options, locals, function (err, result) {
+        if (err) {
+          reject(err)
+        } else {
+          fulfill(result.body)
+        }
+      })
     })
   }
-
 })
