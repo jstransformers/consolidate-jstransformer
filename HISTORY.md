@@ -1,6 +1,6 @@
 # Changelog
 
-## v0.0.2: 2015-06-27
+## v0.0.2: 2015-07-23
 
 - Update dependecies
 - Switch to `.renderAsync` and `.renderFileAsync`
