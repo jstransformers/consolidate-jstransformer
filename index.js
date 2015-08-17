@@ -2,27 +2,41 @@
 
 var jstransformer = require('jstransformer')
 var Promise = require('promise')
-var extractOpts = require('extract-opts')
 var transformers = require('list-of-jstransformers')
+
+/**
+ * Extract the callback, options, and locals from the provided arguments.
+ *
+ * @param [options] The options to be passed to the transformer.
+ * @param [fn] There function callback, should there be one.
+ */
+function extractArgs (options, fn) {
+  if (typeof options === 'function') {
+    fn = options
+    options = {}
+  }
+  return {
+    fn: fn,
+    options: options,
+    locals: options ? (options.locals || options) : options
+  }
+}
 
 transformers.forEach(function (name) {
   /**
    * The file renderer.
    */
-  module.exports[name] = function (filename, options, fn) {
+  module.exports[name] = function (file, options, fn) {
     var transformer = jstransformer(require('jstransformer-' + name))
-    var args = extractOpts(options, fn)
-    options = args[0]
-    fn = args[1]
-    var locals = options.locals ? options.locals : options
+    var args = extractArgs(options, fn)
 
-    if (fn) {
-      return transformer.renderFileAsync(filename, options, locals, function (err, result) {
-        fn(err, result.body ? result.body : null)
+    if (args.fn) {
+      return transformer.renderFileAsync(file, args.options, args.locals, function (err, result) {
+        args.fn(err, result.body ? result.body : null)
       })
     }
     return new Promise(function (fulfill, reject) {
-      transformer.renderFileAsync(filename, options, locals, function (err, result) {
+      transformer.renderFileAsync(file, args.options, args.locals, function (err, result) {
         if (err) {
           reject(err)
         } else {
@@ -37,20 +51,15 @@ transformers.forEach(function (name) {
    */
   module.exports[name].render = function (str, options, fn) {
     var transformer = jstransformer(require('jstransformer-' + name))
-    var args = extractOpts(options, fn)
+    var args = extractArgs(options, fn)
 
-    options = args[0]
-    fn = args[1]
-
-    var locals = options.locals ? options.locals : options
-
-    if (fn) {
-      return transformer.renderAsync(str, options, locals, function (err, result) {
-        fn(err, result.body ? result.body : null)
+    if (args.fn) {
+      return transformer.renderAsync(str, args.options, args.locals, function (err, result) {
+        args.fn(err, result.body ? result.body : null)
       })
     }
     return new Promise(function (fulfill, reject) {
-      transformer.renderAsync(str, options, locals, function (err, result) {
+      transformer.renderAsync(str, args.options, args.locals, function (err, result) {
         if (err) {
           reject(err)
         } else {

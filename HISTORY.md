@@ -1,9 +1,13 @@
 # Changelog
 
+## v0.0.3: 2015-08-17
+
+- Removed dependency on `extractOpts`
+
 ## v0.0.2: 2015-07-23
 
-- Update dependecies
-- Switch to `.renderAsync` and `.renderFileAsync`
+- Updated dependecies
+- Switched to `.renderAsync` and `.renderFileAsync`
 
 ## v0.0.1: 2015-06-27
 
