@@ -30,6 +30,6 @@
   "dependencies": {
     "jstransformer": "^0.0.3",
     "list-of-jstransformers": "^1.0.4",
-    "promise": "^7.0.3"
+    "promise": "^7.0.4"
   }
 }
