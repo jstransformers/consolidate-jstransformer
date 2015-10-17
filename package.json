@@ -1,6 +1,6 @@
 {
   "name": "consolidate-jstransformer",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Consolidate-compatible API to use JSTransformers.",
   "keywords": [
     "jstransformer",
@@ -12,11 +12,14 @@
   "devDependencies": {
     "jstransformer-stylus": "^1.0.0",
     "jstransformer-swig": "^0.1.2",
-    "standard": "^5.1.0",
+    "semistandard": "^7.0.2",
     "testit": "^2.0.2"
   },
   "scripts": {
-    "test": "node test && standard"
+    "test": "node test && semistandard"
+  },
+  "engines": {
+    "node": ">=0.10.36"
   },
   "repository": {
     "type": "git",
@@ -30,6 +33,6 @@
   "dependencies": {
     "jstransformer": "^0.0.3",
     "list-of-jstransformers": "^1.0.4",
-    "promise": "^7.0.3"
+    "promise": "^7.0.4"
   }
 }

@@ -1,8 +1,8 @@
-'use strict'
+'use strict';
 
-var jstransformer = require('jstransformer')
-var Promise = require('promise')
-var transformers = require('list-of-jstransformers')
+var jstransformer = require('jstransformer');
+var Promise = require('promise');
+var transformers = require('list-of-jstransformers');
 
 /**
  * Extract the callback, options, and locals from the provided arguments.
@@ -12,14 +12,14 @@ var transformers = require('list-of-jstransformers')
  */
 function extractArgs (options, fn) {
   if (typeof options === 'function') {
-    fn = options
-    options = {}
+    fn = options;
+    options = {};
   }
   return {
     fn: fn,
     options: options,
     locals: options ? (options.locals || options) : options
-  }
+  };
 }
 
 transformers.forEach(function (name) {
@@ -27,45 +27,45 @@ transformers.forEach(function (name) {
    * The file renderer.
    */
   module.exports[name] = function (file, options, fn) {
-    var transformer = jstransformer(require('jstransformer-' + name))
-    var args = extractArgs(options, fn)
+    var transformer = jstransformer(require('jstransformer-' + name));
+    var args = extractArgs(options, fn);
 
     if (args.fn) {
       return transformer.renderFileAsync(file, args.options, args.locals, function (err, result) {
-        args.fn(err, result.body ? result.body : null)
-      })
+        args.fn(err, result.body ? result.body : null);
+      });
     }
     return new Promise(function (fulfill, reject) {
       transformer.renderFileAsync(file, args.options, args.locals, function (err, result) {
         if (err) {
-          reject(err)
+          reject(err);
         } else {
-          fulfill(result.body)
+          fulfill(result.body);
         }
-      })
-    })
-  }
+      });
+    });
+  };
 
   /**
    * The string renderer.
    */
   module.exports[name].render = function (str, options, fn) {
-    var transformer = jstransformer(require('jstransformer-' + name))
-    var args = extractArgs(options, fn)
+    var transformer = jstransformer(require('jstransformer-' + name));
+    var args = extractArgs(options, fn);
 
     if (args.fn) {
       return transformer.renderAsync(str, args.options, args.locals, function (err, result) {
-        args.fn(err, result.body ? result.body : null)
-      })
+        args.fn(err, result.body ? result.body : null);
+      });
     }
     return new Promise(function (fulfill, reject) {
       transformer.renderAsync(str, args.options, args.locals, function (err, result) {
         if (err) {
-          reject(err)
+          reject(err);
         } else {
-          fulfill(result.body)
+          fulfill(result.body);
         }
-      })
-    })
-  }
-})
+      });
+    });
+  };
+});
