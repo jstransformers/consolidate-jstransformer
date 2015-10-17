@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.1.0: 2015-10-16
+
+- Updated dependencies
+- Switched to `semistandard` for formatting
+
 ## v0.0.3: 2015-08-17
 
 - Removed dependency on `extractOpts`
