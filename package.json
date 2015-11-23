@@ -31,7 +31,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "jstransformer": "^0.0.3",
+    "jstransformer": "^0.0.4",
     "list-of-jstransformers": "^1.0.4",
     "promise": "^7.0.4"
   }
