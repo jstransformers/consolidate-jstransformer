@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.1.1: 2016-06-03
+
+- Updated dependencies
+- Switched to `xo` for formattin
+
 ## v0.1.0: 2015-10-16
 
 - Updated dependencies
