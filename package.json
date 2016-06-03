@@ -12,11 +12,12 @@
   "devDependencies": {
     "jstransformer-stylus": "^1.0.0",
     "jstransformer-swig": "^0.1.2",
-    "semistandard": "^7.0.2",
-    "testit": "^2.0.2"
+    "testit": "^2.0.5",
+    "xo": "^0.15.1"
   },
   "scripts": {
-    "test": "node test && semistandard"
+    "test": "node test",
+    "posttest": "xo --space"
   },
   "engines": {
     "node": ">=0.10.36"
@@ -32,7 +33,7 @@
   "license": "MIT",
   "dependencies": {
     "jstransformer": "^0.0.4",
-    "list-of-jstransformers": "^1.0.4",
-    "promise": "^7.0.4"
+    "list-of-jstransformers": "^1.0.12",
+    "promise": "^7.1.1"
   }
 }

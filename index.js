@@ -10,7 +10,7 @@ var transformers = require('list-of-jstransformers');
  * @param [options] The options to be passed to the transformer.
  * @param [fn] There function callback, should there be one.
  */
-function extractArgs (options, fn) {
+function extractArgs(options, fn) {
   if (typeof options === 'function') {
     fn = options;
     options = {};
@@ -35,12 +35,12 @@ transformers.forEach(function (name) {
         args.fn(err, result.body ? result.body : null);
       });
     }
-    return new Promise(function (fulfill, reject) {
+    return new Promise(function (resolve, reject) {
       transformer.renderFileAsync(file, args.options, args.locals, function (err, result) {
         if (err) {
           reject(err);
         } else {
-          fulfill(result.body);
+          resolve(result.body);
         }
       });
     });
@@ -58,12 +58,12 @@ transformers.forEach(function (name) {
         args.fn(err, result.body ? result.body : null);
       });
     }
-    return new Promise(function (fulfill, reject) {
+    return new Promise(function (resolve, reject) {
       transformer.renderAsync(str, args.options, args.locals, function (err, result) {
         if (err) {
           reject(err);
         } else {
-          fulfill(result.body);
+          resolve(result.body);
         }
       });
     });

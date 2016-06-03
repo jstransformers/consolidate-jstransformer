@@ -1,18 +1,18 @@
 'use strict';
 
-var test = require('testit');
 var assert = require('assert');
-var cons = require('..');
 var fs = require('fs');
+var test = require('testit');
+var cons = require('..');
 
-function testTransformer (name) {
+function testTransformer(name) {
   var inputFile = 'test/' + name + '/input.' + name;
-  var input = fs.readFileSync(inputFile, { encoding: 'utf8' }).trim();
+  var input = fs.readFileSync(inputFile, {encoding: 'utf8'}).trim();
   var inputNoLocalsFile = 'test/' + name + '/input-nolocals.' + name;
-  var inputNoLocals = fs.readFileSync(inputNoLocalsFile, { encoding: 'utf8' }).trim();
+  var inputNoLocals = fs.readFileSync(inputNoLocalsFile, {encoding: 'utf8'}).trim();
   var expectedFile = 'test/' + name + '/expected.txt';
-  var expected = fs.readFileSync(expectedFile, { encoding: 'utf8' }).trim();
-  var locals = JSON.parse(fs.readFileSync('test/' + name + '/locals.json', { encoding: 'utf8' }));
+  var expected = fs.readFileSync(expectedFile, {encoding: 'utf8'}).trim();
+  var locals = JSON.parse(fs.readFileSync('test/' + name + '/locals.json', {encoding: 'utf8'}));
 
   test('cons.' + name, function () {
     test('self', function () {
