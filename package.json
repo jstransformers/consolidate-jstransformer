@@ -32,7 +32,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "jstransformer": "^0.0.4",
+    "jstransformer": "^1.0.0",
     "list-of-jstransformers": "^1.0.12",
     "promise": "^7.1.1"
   }
