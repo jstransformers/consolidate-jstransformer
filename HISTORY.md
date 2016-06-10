@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.2: 2016-06-10
+
+- Update to `jstransformer@1.0.0`
+
 ## v0.1.1: 2016-06-03
 
 - Updated dependencies
