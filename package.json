@@ -13,7 +13,7 @@
     "jstransformer-stylus": "^1.0.0",
     "jstransformer-swig": "^0.1.2",
     "testit": "^2.0.5",
-    "xo": "^0.15.1"
+    "xo": "^0.16.0"
   },
   "scripts": {
     "test": "node test",
