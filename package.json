@@ -1,6 +1,10 @@
 {
+  "dependencies": {
+    "jstransformer": "^1.0.0",
+    "list-of-jstransformers": "^1.0.15"
+  },
   "name": "consolidate-jstransformer",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Consolidate-compatible API to use JSTransformers.",
   "keywords": [
     "jstransformer",
@@ -12,13 +16,16 @@
   "devDependencies": {
     "jstransformer-stylus": "^1.1.0",
     "jstransformer-swig": "^0.2.0",
-    "testit": "^2.1.2"
+    "testit": "^2.1.2",
+    "xo": "^0.17.1"
   },
   "scripts": {
-    "test": "node test"
+    "coverage": "test-jstransformer coverage",
+    "test": "node test",
+    "posttest": "xo --space --no-semicolon index.js"
   },
   "engines": {
-    "node": ">= 4"
+    "node": ">=4"
   },
   "repository": {
     "type": "git",
@@ -28,10 +35,5 @@
     "name": "JSTransformers Team",
     "url": "http://github.com/orgs/jstransformers/people"
   },
-  "license": "MIT",
-  "dependencies": {
-    "jstransformer": "^1.0.0",
-    "list-of-jstransformers": "^1.0.15",
-    "promise": "^7.1.1"
-  }
+  "license": "MIT"
 }

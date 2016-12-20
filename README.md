@@ -2,18 +2,10 @@
 
 [Consolidate](https://github.com/tj/consolidate.js)-compatible API to use [JSTransformers](http://github.com/jstransformers).
 
-[![Build Status](https://img.shields.io/travis/jstransformers/consolidate-jstransformer/master.svg)](https://travis-ci.org/jstransformers/consolidate-jstransformer)
-[![Coverage Status](https://img.shields.io/coveralls/jstransformers/consolidate-jstransformer/master.svg)](https://coveralls.io/r/jstransformers/consolidate-jstransformer?branch=master)
-[![Dependency Status](https://img.shields.io/david/jstransformers/consolidate-jstransformer/master.svg)](http://david-dm.org/jstransformers/consolidate-jstransformer)
-[![NPM version](https://img.shields.io/npm/v/consolidate-jstransformer.svg)](https://www.npmjs.org/package/consolidate-jstransformer)
-
-## Installation
-
-    npm install consolidate-jstransformer
-
-## Usage
-
-#### Before
+[![Build Status](https://img.shields.io/travis/jstransformers/jstransformer-consolidate/master.svg)](https://travis-ci.org/jstransformers/jstransformer-consolidate)
+[![Coverage Status](https://img.shields.io/codecov/c/github/jstransformers/jstransformer-consolidate/master.svg)](https://codecov.io/gh/jstransformers/jstransformer-consolidate)
+[![Dependency Status](https://img.shields.io/david/jstransformers/jstransformer-consolidate/master.svg)](http://david-dm.org/jstransformers/jstransformer-consolidate)
+[![NPM version](https://img.shields.io/npm/v/jstransformer-consolidate.svg)](https://www.npmjs.org/package/jstransformer-consolidate)
 
 ``` javascript
 var cons = require('consolidate')

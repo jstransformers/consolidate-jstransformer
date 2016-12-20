@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.2.0: 2016-12-20
+
+- Updated Boilerplate
+
 ## v0.1.2: 2016-06-10
 
 - Update to `jstransformer@1.0.0`
