@@ -1,5 +1,7 @@
 # consolidate-jstransformer
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/jstransformers/consolidate-jstransformer.svg)](https://greenkeeper.io/)
+
 [Consolidate](https://github.com/tj/consolidate.js)-compatible API to use [JSTransformers](http://github.com/jstransformers).
 
 [![Build Status](https://img.shields.io/travis/jstransformers/jstransformer-consolidate/master.svg)](https://travis-ci.org/jstransformers/jstransformer-consolidate)
