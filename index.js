@@ -1,7 +1,7 @@
 'use strict'
 
-var jstransformer = require('jstransformer')
-var transformers = require('list-of-jstransformers')
+const jstransformer = require('jstransformer')
+const transformers = require('list-of-jstransformers')
 
 /**
  * Extract the callback, options, and locals from the provided arguments.
@@ -15,27 +15,27 @@ function extractArgs(options, fn) {
     options = {}
   }
   return {
-    fn: fn,
-    options: options,
+    fn,
+    options,
     locals: options ? (options.locals || options) : options
   }
 }
 
-transformers.forEach(function (name) {
+transformers.forEach(name => {
   /**
    * The file renderer.
    */
-  module.exports[name] = function (file, options, fn) {
-    var transformer = jstransformer(require('jstransformer-' + name)) // eslint-disable-line import/no-dynamic-require
-    var args = extractArgs(options, fn)
+  module.exports[name] = (file, options, fn) => {
+    const transformer = jstransformer(require('jstransformer-' + name)) // eslint-disable-line import/no-dynamic-require
+    const args = extractArgs(options, fn)
 
     if (args.fn) {
-      return transformer.renderFileAsync(file, args.options, args.locals, function (err, result) {
+      return transformer.renderFileAsync(file, args.options, args.locals, (err, result) => {
         args.fn(err, result.body ? result.body : null)
       })
     }
-    return new Promise(function (resolve, reject) {
-      transformer.renderFileAsync(file, args.options, args.locals, function (err, result) {
+    return new Promise((resolve, reject) => {
+      transformer.renderFileAsync(file, args.options, args.locals, (err, result) => {
         if (err) {
           reject(err)
         } else {
@@ -49,17 +49,17 @@ transformers.forEach(function (name) {
    * The string renderer.
    */
   module.exports[name].render = function (str, options, fn) {
-    var former = require('jstransformer-' + name) // eslint-disable-line import/no-dynamic-require
-    var transformer = jstransformer(former)
-    var args = extractArgs(options, fn)
+    const former = require('jstransformer-' + name) // eslint-disable-line import/no-dynamic-require
+    const transformer = jstransformer(former)
+    const args = extractArgs(options, fn)
 
     if (args.fn) {
-      return transformer.renderAsync(str, args.options, args.locals, function (err, result) {
+      return transformer.renderAsync(str, args.options, args.locals, (err, result) => {
         args.fn(err, result.body ? result.body : null)
       })
     }
-    return new Promise(function (resolve, reject) {
-      transformer.renderAsync(str, args.options, args.locals, function (err, result) {
+    return new Promise((resolve, reject) => {
+      transformer.renderAsync(str, args.options, args.locals, (err, result) => {
         if (err) {
           reject(err)
         } else {

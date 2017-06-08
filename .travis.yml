@@ -4,11 +4,7 @@ sudo: false
 node_js:
   - "4"
   - "6"
-
-after_success:
-  - npm run coverage
-  - npm i codecov
-  - codecov -f coverage/coverage.json
+  - "7"
 
 notifications:
   email:
