@@ -15,7 +15,7 @@
   ],
   "devDependencies": {
     "jstransformer-stylus": "^1.5.0",
-    "jstransformer-swig": "^0.2.1",
+    "jstransformer-swig": "^1.0.0",
     "testit": "^3.0.0",
     "xo": "*"
   },
