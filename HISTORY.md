@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.0: 2018-02-15
+
+- Update Boilerplate
+
 ## v0.3.0: 2017-01-06
 
 - Updated dependencies
