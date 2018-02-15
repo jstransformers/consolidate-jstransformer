@@ -4,22 +4,29 @@
 
 [Consolidate](https://github.com/tj/consolidate.js)-compatible API to use [JSTransformers](http://github.com/jstransformers).
 
-[![Build Status](https://img.shields.io/travis/jstransformers/jstransformer-consolidate/master.svg)](https://travis-ci.org/jstransformers/jstransformer-consolidate)
-[![Coverage Status](https://img.shields.io/codecov/c/github/jstransformers/jstransformer-consolidate/master.svg)](https://codecov.io/gh/jstransformers/jstransformer-consolidate)
-[![Dependency Status](https://img.shields.io/david/jstransformers/jstransformer-consolidate/master.svg)](http://david-dm.org/jstransformers/jstransformer-consolidate)
-[![NPM version](https://img.shields.io/npm/v/jstransformer-consolidate.svg)](https://www.npmjs.org/package/jstransformer-consolidate)
+[![Build Status](https://img.shields.io/travis/jstransformers/consolidate-jstransformer/master.svg)](https://travis-ci.org/jstransformers/consolidate-jstransformer)
+[![Coverage Status](https://img.shields.io/codecov/c/github/jstransformers/consolidate-jstransformer/master.svg)](https://codecov.io/gh/jstransformers/consolidate-jstransformer)
+[![Dependency Status](https://img.shields.io/david/jstransformers/consolidate-jstransformer/master.svg)](http://david-dm.org/jstransformers/consolidate-jstransformer)
+[![Greenkeeper badge](https://badges.greenkeeper.io/jstransformers/consolidate-jstransformer.svg)](https://greenkeeper.io/)
+[![NPM version](https://img.shields.io/npm/v/consolidate-jstransformer.svg)](https://www.npmjs.org/package/consolidate-jstransformer)
+
+## API
+
+Replace the `consolidate` package with `consolidate-jstransformer`.
+
+### Before
 
 ``` javascript
 var cons = require('consolidate')
 ```
 
-#### After
+### After
 
 ``` javascript
 var cons = require('consolidate-jstransformer')
 ```
 
-## API
+### Usage
 
 Use `consolidate-jstransformer` the same way you would use Consolidate:
 
