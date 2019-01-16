@@ -14,6 +14,7 @@ function extractArgs(options, fn) {
     fn = options
     options = {}
   }
+
   return {
     fn,
     options,
@@ -26,7 +27,7 @@ transformers.forEach(name => {
    * The file renderer.
    */
   module.exports[name] = (file, options, fn) => {
-    const transformer = jstransformer(require('jstransformer-' + name)) // eslint-disable-line import/no-dynamic-require
+    const transformer = jstransformer(require('jstransformer-' + name))
     const args = extractArgs(options, fn)
 
     if (args.fn) {
@@ -34,6 +35,7 @@ transformers.forEach(name => {
         args.fn(err, result.body ? result.body : null)
       })
     }
+
     return new Promise((resolve, reject) => {
       transformer.renderFileAsync(file, args.options, args.locals, (err, result) => {
         if (err) {
@@ -49,7 +51,7 @@ transformers.forEach(name => {
    * The string renderer.
    */
   module.exports[name].render = function (str, options, fn) {
-    const former = require('jstransformer-' + name) // eslint-disable-line import/no-dynamic-require
+    const former = require('jstransformer-' + name)
     const transformer = jstransformer(former)
     const args = extractArgs(options, fn)
 
@@ -58,6 +60,7 @@ transformers.forEach(name => {
         args.fn(err, result.body ? result.body : null)
       })
     }
+
     return new Promise((resolve, reject) => {
       transformer.renderAsync(str, args.options, args.locals, (err, result) => {
         if (err) {
