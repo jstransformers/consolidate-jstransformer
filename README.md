@@ -5,7 +5,7 @@
 [![Build Status](https://img.shields.io/travis/jstransformers/consolidate-jstransformer/master.svg)](https://travis-ci.org/jstransformers/consolidate-jstransformer)
 [![Coverage Status](https://img.shields.io/codecov/c/github/jstransformers/consolidate-jstransformer/master.svg)](https://codecov.io/gh/jstransformers/consolidate-jstransformer)
 [![Dependency Status](https://img.shields.io/david/jstransformers/consolidate-jstransformer/master.svg)](http://david-dm.org/jstransformers/consolidate-jstransformer)
-[![Greenkeeper badge](https://badges.greenkeeper.io/jstransformers/consolidate-jstransformer.svg)](https://greenkeeper.io/)
+
 [![NPM version](https://img.shields.io/npm/v/consolidate-jstransformer.svg)](https://www.npmjs.org/package/consolidate-jstransformer)
 
 ## API
